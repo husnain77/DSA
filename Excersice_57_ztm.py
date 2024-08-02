@@ -28,17 +28,19 @@ def checkMatchingValues(array1, array2):
 result = checkMatchingValues(array1=array1, array2=array2)
 print(result)
 
-#O(n*n) = O(n^2)
+#O(n*n) = O(n^2)  TC
+#O(1)  SC
 #code is not efficient 
 
 #Answer -2
 def checkMatchingValues2(array1, array2):
     for j in array2:    #O(n) 
-            if j in array1: #O(1) per lookup os it will be O(m) 
+            if j in array1: #O(1) per lookup so it will be O(m) 
                       return True
     else:
         return False
-#O(n*m) = O(n^2)
+#O(n+m) = O(n) TC
+
 
 # Calling the function with the example arrays
 result = checkMatchingValues2(array1=array1, array2=array2)
@@ -46,25 +48,8 @@ print(result)
 
 
 #Answer 3 
-def contains_common_item(arr1, arr2):
-    # Create a dictionary to store items from the first array
-    item_map = {}
-    
-    # Loop through the first array and add items to the dictionary
-    for item in arr1:
-        if item not in item_map:
-            item_map[item] = True   #O(n)
-    
-    # Loop through the second array and check if any item exists in the dictionary
-    for item in arr2:
-        if item in item_map:
-            return True         #O(N)
+#can we assume always two arrays
 
-    return False
-
-
-
-#can we assume always to arrays
 def matchvalue(arr1, arr2):
     item_map = {}
     for j in arr1:  #O(a)
